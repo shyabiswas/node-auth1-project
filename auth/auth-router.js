@@ -24,13 +24,13 @@ router.post("/login", (req, res)=>{
         .then(user =>{
             if (user && bcrypt.compareSync(password, user.password))
             { req.session.user = username;
-            res.status(200).json({message: `Welcome ${user.username}!`, })}
+            res.status(200).json({message: `Welcome ${username}!`, })}
             else{
                 res.status(401).json({message:"invalid credentials"});
             }
         })
         .catch(error =>{
-            res.status(500).json(error);
+            res.status(500).json({ message: "Error logging in", error});
         });
 })
 

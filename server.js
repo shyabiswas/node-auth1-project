@@ -17,8 +17,8 @@ const server = express();
 
 
 const sessionConfig = {
-    name: 'chocolate-chip',
-    secret: 'myspeshulsecret',
+    name: 'my-cookie-love',
+    secret: 'secretsec',
     cookie: {
       maxAge: 3600 * 1000,
       secure: false, // should be true in production
